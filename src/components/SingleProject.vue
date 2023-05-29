@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       showDetails: false,
-      uri: 'http://localhost:3000/projects/' + this.project.id
+      uri: this.api + 'projects/' + this.project.id
     }
   },
   methods: {

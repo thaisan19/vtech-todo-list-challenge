@@ -2,4 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-createApp(App).use(router).mount('#app')
+const api = 'https://vtech-json-server.herokuapp.com/'
+
+let app = createApp(App)
+
+app.config.globalProperties.api = api
+
+app.use(router).mount('#app')

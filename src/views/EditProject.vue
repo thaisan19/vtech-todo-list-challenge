@@ -18,7 +18,7 @@ export default {
   props: ['id'],
   data() {
     return {
-      uri: 'http://localhost:3000/projects/' + this.id,
+      uri: this.api + 'projects/' + this.id,
       title: '',
       details: '',
     }

@@ -18,11 +18,10 @@ export default {
     }
   },
   mounted () {
-    fetch('http://localhost:3000/projects')
+    fetch(this.api + 'projects')
       .then(res => res.json())
       .then(data => {
         this.projects = data
-        console.log('add-projects', this.projects)
       })
       .catch(err => console.log(err))
   },
@@ -45,7 +44,7 @@ export default {
 
     },
     postProject (project) {
-      fetch('http://localhost:3000/projects', {
+      fetch(this.api + 'projects', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(project)
@@ -60,7 +59,6 @@ export default {
           return i.title === item.title
         })
       }
-      console.log('status', status)
       return status.length > 0
     }
   }
